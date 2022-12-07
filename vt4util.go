@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
+	"os"
 	"strings"
 	"time"
 
@@ -59,7 +59,7 @@ func main() {
 	vt4_out.Open()
 	defer vt4_out.Close()
 
-	sysex, _ := ioutil.ReadFile("VT-4_REQ_ID.syx")
+	sysex, _ := os.ReadFile("VT-4_REQ_ID.syx")
 	vt4_out.Send(sysex)
 
 	vt4_in.Open()
